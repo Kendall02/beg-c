@@ -3,9 +3,12 @@
 
 int main(void)
 {
-  int chosen = 15;                    /* The lucky number            */
+  int chosen = 0;                    /* The lucky number            */
   int guess = 0;                      /* Stores a guess              */
   int count = 3;                      /* The maximum number of tries */
+  int limit = 20;                     /*Upper limit for psedo-random values*/  
+  srand(time(NULL));                  /*Use clock value as starting seed*/
+  chosen=1+rand()%limit;              /*random int 1 to limit*/
 
   printf("\nThis is a guessing game.");
   printf("\nI have chosen a number between 1 and 20"
